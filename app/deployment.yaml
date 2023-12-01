@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rotanakkosal-react-swarm-deployment
+  labels:
+    app: rotanakkosal-react-swarm
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rotanakkosal-react-swarm
+  template:
+    metadata:
+      labels:
+        app: rotanakkosal-react-swarm
+    spec:
+      containers:
+        - name: rotanakkosal-react-swarm
+          image: kshrdautopilot/rotanakkosal-react-swarm
+          ports:
+            - containerPort: 3000
