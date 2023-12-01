@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rotanakkosal-react-swarm-ingress
+  namespace: rotanakkosal
+spec:
+  tls:
+    - hosts:
+        - me.auto-pilot.dev
+      secretName: tls-cert
+  rules:
+    - host: me.auto-pilot.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: rotanakkosal-react-swarm-svc
+                port:
+                  number: 3000
