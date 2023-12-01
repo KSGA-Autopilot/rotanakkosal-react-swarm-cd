@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: rotanakkosal-react-swarm
-          image: kshrdautopilot/rotanakkosal-react-swarm
+          image: kshrdautopilot/rotanakkosal-react-swarm:2023-12-01-03-11-50
           ports:
             - containerPort: 3000
