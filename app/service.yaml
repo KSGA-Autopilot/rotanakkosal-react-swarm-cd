@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rotanakkosal-react-swarm-svc
+spec:
+  selector:
+    app: rotanakkosal-react-swarm
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
